@@ -1,7 +1,22 @@
-import '../styles/globals.css'
+//Next Components
+import Head from 'next/head'
+import Router from 'next/router';
+import nProgress from 'nprogress';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { ChakraProvider } from '@chakra-ui/react'
+
+import { Layout } from '../components';
+
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <>
+    <ChakraProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ChakraProvider>
+  </>
+  )
 }
 
 export default MyApp
